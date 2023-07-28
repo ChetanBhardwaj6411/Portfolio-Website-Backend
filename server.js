@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
     res.status(200).send('The API is Live');
 });
 
-app.get('savedetails', async (req, res) => {
+app.get('/savedetails', async (req, res) => {
     res.status(200).send('The Endpoint to Save the Form\'s Details');
 });
 
