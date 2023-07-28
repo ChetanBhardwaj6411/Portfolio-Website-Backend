@@ -4,6 +4,7 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 
 require('./src/db/connection');
+require ('dotenv').config();
 
 const port = process.env.PORT || 3000;
 
