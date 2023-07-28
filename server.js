@@ -4,14 +4,14 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 
 require('./src/db/connection');
-require ('dotenv').config();
+require('dotenv').config();
 
 const port = process.env.PORT || 3000;
 
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 let transporter = nodemailer.createTransport({
@@ -36,11 +36,11 @@ app.get('/savedetails', async (req, res) => {
 app.post('/savedetails', async (req, res) => {
 
     try {
-        
+
         const contact = new contact_detail(req.body);
-        
+
         await contact.save();
-        
+
         let mailOptions = {
             from: "timeriders9@gmail.com",
             to: "chetan.bhardwaj6411@gmail.com",
@@ -52,8 +52,8 @@ Message: ${req.body.message}
 `
         }
 
-        transporter.sendMail(mailOptions, (err, success)=>{
-            if(err) {
+        transporter.sendMail(mailOptions, (err, success) => {
+            if (err) {
                 console.log(err);
             }
             else {
@@ -78,7 +78,7 @@ Message: ${req.body.message}
 
 });
 
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
 
