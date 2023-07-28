@@ -1,0 +1,49 @@
+/* Styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    margin: 0;
+
+    background-color: #FFEEDB;
+
+    font-family: 'Cormorant Garamond', serif;
+
+}
+
+.message {
+
+    padding: 20px;
+    border-radius: 8px;
+
+    background-color: #ED9B40;
+    color: #FFFFFF;
+
+    font-size: 24px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    animation: pulsate 3s ease-in-out infinite;
+
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
