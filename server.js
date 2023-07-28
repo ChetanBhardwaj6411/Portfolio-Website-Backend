@@ -25,11 +25,12 @@ let transporter = nodemailer.createTransport({
     }
 });
 
-app.get('/', (req, res)=>{
-    res.status(200).send('API is Live!');
+app.get('/', (req, res) => {
+    res.status(200).send('The API is Live');
 });
 
-app.post('/savedetails', async (req, res)=>{
+app.post('/savedetails', async (req, res) => {
+
     try {
         
         const contact = new contact_detail(req.body);
@@ -74,7 +75,5 @@ Message: ${req.body.message}
 });
 
 app.listen(port, ()=>{
-    console.log(`Server is running at port: ${port}`);
+    console.log(`Server is running on port: ${port}`);
 });
-
-
