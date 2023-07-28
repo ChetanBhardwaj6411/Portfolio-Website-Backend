@@ -29,6 +29,10 @@ app.get('/', (req, res) => {
     res.status(200).send('The API is Live');
 });
 
+app.get('savedetails', async (req, res) => {
+    res.status(200).send('The Endpoint to Save the Form\'s Details');
+});
+
 app.post('/savedetails', async (req, res) => {
 
     try {
@@ -77,3 +81,4 @@ Message: ${req.body.message}
 app.listen(port, ()=>{
     console.log(`Server is running on port: ${port}`);
 });
+
