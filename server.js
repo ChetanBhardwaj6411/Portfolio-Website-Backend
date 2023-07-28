@@ -1,4 +1,4 @@
-/*  Server.js */
+/* Server.js */
 
 const express = require('express');
 const contact_detail = require('./src/models/contactDetails');
