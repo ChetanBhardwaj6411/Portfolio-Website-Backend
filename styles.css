@@ -2,6 +2,28 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 
+/* Color Combinations 
+
+    White: #FFFFFF, Black: #000000
+
+    Butterscotch: #ED9B40, Antique White: #FFEEDB
+    Redwood: #AF5B5B, Vanilla: #F0F2A6
+
+*/
+
+:root {
+
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+
+    --color-butterscotch: #ED9B40;
+    --color-antique-white: #FFEEDB;
+
+    --color-redwood: #AF5B5B;
+    --color-vanilla: #F0F2A6;
+
+}
+
 body {
 
     display: flex;
@@ -46,4 +68,7 @@ body {
         transform: scale(1);
     }
 }
+
+
+
 
