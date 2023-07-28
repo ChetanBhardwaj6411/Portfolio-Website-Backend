@@ -1,3 +1,5 @@
+/*  Server.js */
+
 const express = require('express');
 const contact_detail = require('./src/models/contactDetails');
 const nodemailer = require('nodemailer');
@@ -25,15 +27,21 @@ let transporter = nodemailer.createTransport({
     }
 });
 
-app.get('/', (req, res) => {
-    res.status(200).send('The API is Live');
+// app.get('/', (req, res) => {
+//     res.status(200).send('The API is Live');
+// });
+
+app.use(express.static(__dirname));
+
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/index.html");
 });
 
-app.get('/savedetails', async (req, res) => {
-    res.status(200).send('The Endpoint to Save the Form\'s Details');
+app.get("/saveDetails", (req, res) => {
+    res.sendFile(__dirname + "/saveDetails.html");
 });
 
-app.post('/savedetails', async (req, res) => {
+app.post('/saveDetails', async (req, res) => {
 
     try {
 
@@ -81,4 +89,6 @@ Message: ${req.body.message}
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
+
+
 
